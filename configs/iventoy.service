@@ -1,0 +1,14 @@
+[Unit]
+Description=iVentoy PXE Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+WorkingDirectory=/home/tertol/Downloads/iventoy
+ExecStart=/home/tertol/Downloads/iventoy/iventoy.sh start
+ExecStop=/home/tertol/Downloads/iventoy/iventoy.sh stop
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
